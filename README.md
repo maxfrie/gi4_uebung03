@@ -16,6 +16,7 @@ Der Wert des Ausdrucks `3x^2 + 4x − 5` soll auf verschiedene Arten berechnet w
 
 6. Zusatzaufgabe: Schreiben Sie ein Programm, welches die Multiplikation von komplexen Zahlen ermöglicht. Eine komplexe Zahl wird dabei mittels des nachfolgenden struct abgebildet:
 
+ 
 	struct komplex {
 		int real;
 		int imag;
