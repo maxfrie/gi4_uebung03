@@ -14,10 +14,4 @@ Der Wert des Ausdrucks `3x^2 + 4x − 5` soll auf verschiedene Arten berechnet w
 
 5. Diskutieren Sie, welche Maßnahmen nötig sind, um die Berechnung von Termen der Form 􏰀`for(i=0; i<N; i++) { a(i) * x^i} ` durchzuführen.
 
-6. Zusatzaufgabe: Schreiben Sie ein Programm, welches die Multiplikation von komplexen Zahlen ermöglicht. Eine komplexe Zahl wird dabei mittels des nachfolgenden struct abgebildet:
-
- 
-	struct komplex {
-		int real;
-		int imag;
-	};
+6. Zusatzaufgabe: Schreiben Sie ein Programm, welches die Multiplikation von komplexen Zahlen ermöglicht. Eine komplexe Zahl wird dabei mittels des nachfolgenden struct abgebildet: `struct komplex { int real; int imag; };`
