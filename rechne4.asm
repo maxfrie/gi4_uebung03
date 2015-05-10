@@ -21,17 +21,12 @@ main:
 
 	mov ebx, koeffizient ; Pointer auf erstes Element in Array
 	
-	mov eax, dword [xvar] ; x in multiplikationsregister
-	mul dword [xvar] ; quadrieren
-	mul dword [ebx] ; mit a multiplizieren
-	mov dword [ergebnis], eax ;Zwischenergebnis auslagern
-
-	mov eax, dword [xvar] ; x in multiplikationsregister 
-	mul dword [ebx+4] ; mit b multiplizieren
-	add dword [ergebnis], eax ; mit Zwischenergebnis addieren
-
-	mov eax , dword [ebx+8] ; koeffizient c bereitstellen
-	add dword [ergebnis], eax ; subtrahieren, ergebnis in variable
+	mov eax, dword [xvar]
+	mul dword [ebx]
+	add eax, dword [ebx+4]
+	mul dword [xvar]
+	add eax, dword[ebx+8]
+	mov dword [ergebnis], eax 
 
 	mov esp, ebp	; alter Stackframe restaurieren
 	pop ebp	
