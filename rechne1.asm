@@ -17,16 +17,14 @@ main:
 	; Zeile nur durch den gewünschten Code
 	; ersetzt we
 	
-	mov eax, 2 ; x in multiplikationsregister
-	mov ebx, 2
-	mul ebx ; quadrieren
-	mov ebx, 3 ; 3 zum multiplizieren initialisieren
-	mul ebx ; mit 3 multiplizieren
+	mov edi, 2 ; x initilisieren
+	mov eax, edi ; x in multiplikationsregister
+	mul eax ; quadrieren
+	imul eax, 3 ; mit 3 multiplizieren
 	push eax ;Zwischenergebnis auslagern
 
 	mov eax, 2 ; x in multiplikationsregister
-	mov ebx, 4 ; 4 zum multiplizieren initialisieren
-	mul ebx ; multiplizieren
+	imul eax, 4 ; multiplizieren
 	pop ebx ; Zwischenergebnis vom Stack holen
 	add eax, ebx ; mit Zwischenergebnis addieren
 

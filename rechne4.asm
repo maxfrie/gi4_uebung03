@@ -21,10 +21,11 @@ main:
 
 	mov ebx, koeffizient ; Pointer auf erstes Element in Array
 	
+	; Wender Horner-Schema fuer Berechnung an
 	mov eax, dword [xvar]
-	mul dword [ebx]
+	imul eax, dword [ebx]
 	add eax, dword [ebx+4]
-	mul dword [xvar]
+	imul eax, dword [xvar]
 	add eax, dword[ebx+8]
 	mov dword [ergebnis], eax 
 

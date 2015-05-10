@@ -19,14 +19,12 @@ main:
 	; ersetzt we
 	
 	mov eax, dword [xvar] ; x in multiplikationsregister
-	mul dword [xvar] ; quadrieren
-	mov ebx, 3 ; 3 zum multiplizieren initialisieren
-	mul ebx ; mit 3 multiplizieren
+	mul eax ; quadrieren
+	imul eax, 3 ; mit 3 multiplizieren
 	mov dword [ergebnis], eax ;Zwischenergebnis auslagern
 
 	mov eax, dword [xvar] ; x in multiplikationsregister
-	mov ebx, 4 ; 4 zum multiplizieren initialisieren
-	mul ebx ; multiplizieren
+	imul eax, 4 ; multiplizieren
 	add dword [ergebnis], eax ; mit Zwischenergebnis addieren
 
 	sub dword [ergebnis], 5 ; subtrahieren, ergebnis in variable
