@@ -1,5 +1,6 @@
 SECTION .data
 	xvar DD 3; x
+	koeffizient DD 33, 2, 7 ;koeffizienten a, b, c
 	ergebnis DD 0; no data
 
 SECTION .text
@@ -17,19 +18,20 @@ main:
 	; verwendet werden. Hierzu muss die nächste
 	; Zeile nur durch den gewünschten Code
 	; ersetzt we
+
+	mov ebx, koeffizient ; Pointer auf erstes Element in Array
 	
 	mov eax, dword [xvar] ; x in multiplikationsregister
 	mul dword [xvar] ; quadrieren
-	mov ebx, 3 ; 3 zum multiplizieren initialisieren
-	mul ebx ; mit 3 multiplizieren
+	mul dword [ebx] ; mit a multiplizieren
 	mov dword [ergebnis], eax ;Zwischenergebnis auslagern
 
-	mov eax, dword [xvar] ; x in multiplikationsregister
-	mov ebx, 4 ; 4 zum multiplizieren initialisieren
-	mul ebx ; multiplizieren
+	mov eax, dword [xvar] ; x in multiplikationsregister 
+	mul dword [ebx+4] ; mit b multiplizieren
 	add dword [ergebnis], eax ; mit Zwischenergebnis addieren
 
-	sub dword [ergebnis], 5 ; subtrahieren, ergebnis in variable
+	mov eax , dword [ebx+8] ; koeffizient c bereitstellen
+	sub dword [ergebnis], eax ; subtrahieren, ergebnis in variable
 
 	mov esp, ebp	; alter Stackframe restaurieren
 	pop ebp	
